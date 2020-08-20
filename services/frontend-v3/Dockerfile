@@ -20,7 +20,7 @@ RUN chgrp -R 0 /upskill-frontend && \
 RUN yarn install --production
 
 # Copy app
-COPY . .
+COPY . /upskill-frontend
 
 # Builds the app
 RUN yarn build
