@@ -38,7 +38,7 @@ pipeline {
                             pwd
                             ls -la $WORKSPACE/$FRONTEND_DIR
                         """
-                        builder.buildApp(FRONTEND_IMAGE_NAME, "$WORKSPACE/$FRONTEND_DIR")
+                        builder.buildApp(FRONTEND_IMAGE_NAME, "$WORKSPACE/$FRONTEND_DIR/**")
                     }
                 //}
             }
