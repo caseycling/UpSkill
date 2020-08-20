@@ -32,14 +32,14 @@ pipeline {
         */
         stage('build-frontend') {
             steps {
-			    dir("${FRONTEND_DIR}") {
+			    //dir("${FRONTEND_DIR}") {
                     script {
                         sh"""
                             pwd
                         """
                         builder.buildApp(FRONTEND_IMAGE_NAME, "$WORKSPACE/$FRONTEND_DIR")
                     }
-                }
+                //}
             }
         }
     }
