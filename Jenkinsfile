@@ -19,6 +19,7 @@ pipeline {
     }
 
     stages {
+        /*
         stage('build-backend') {
             steps {
 			    dir("${BACKEND_DIR}") {
@@ -28,7 +29,7 @@ pipeline {
                 }
             }
         }
-        
+        */
         stage('build-frontend') {
             steps {
 			    dir("${FRONTEND_DIR}") {
