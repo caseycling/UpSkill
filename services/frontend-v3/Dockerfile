@@ -8,16 +8,16 @@ USER root
 RUN mkdir -p /upskill-frontend/build
 WORKDIR /upskill-frontend
 
-# Make group permissions equal to the owner user permissions
-RUN chgrp -R 0 /upskill-frontend && \ 
-  chmod -R g=u /upskill-frontend
 
 # Copy app dependencies
 COPY package.json yarn.lock /upskill-frontend/
 
-RUN pwd
+# Make group permissions equal to the owner user permissions
+RUN chgrp -R 0 /upskill-frontend && \ 
+  chmod -R g=u /upskill-frontend
 
-RUN ls -la
+RUN ls -la /upskill-frontend/src
+RUN ls -la /upskill-frontend/src/database
 
 # Runs install script
 RUN yarn install --production
