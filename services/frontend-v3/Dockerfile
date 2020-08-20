@@ -17,10 +17,10 @@ RUN chgrp -R 0 /upskill-frontend && \
   chmod -R g=u /upskill-frontend
 
 # Runs install script
-RUN yarn install --production
+RUN yarn install --production --verbose
 
 # Copy app
-COPY . /upskill-frontend
+COPY . .
 
 # Builds the app
 RUN yarn build
