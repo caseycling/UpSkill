@@ -2,6 +2,8 @@ FROM node:12.18.3-alpine3.11
 
 ENV TZ=America/Toronto
 
+USER root
+
 # Set working directory
 RUN mkdir /upskill-frontend
 WORKDIR /upskill-frontend
@@ -17,13 +19,15 @@ RUN chgrp -R 0 /upskill-frontend && \
   chmod -R g=u /upskill-frontend
 
 # Runs install script
-RUN yarn install --production --verbose
+RUN yarn install --production
 
 # Copy app
 COPY . .
 
 # Builds the app
-RUN yarn build --verbose
+RUN yarn build
 
 # Runs start script
 CMD yarn start:prod
+
+USER 1001
