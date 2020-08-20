@@ -4,8 +4,6 @@ ENV TZ=America/Toronto
 
 USER root
 
-RUN ls -la
-
 # Set working directory
 RUN mkdir -p /upskill-frontend/build
 WORKDIR /upskill-frontend
