@@ -37,7 +37,7 @@ pipeline {
                         sh"""
                             pwd
                         """
-                        builder.buildApp(FRONTEND_IMAGE_NAME, FRONTEND_DIR)
+                        builder.buildApp(FRONTEND_IMAGE_NAME, "$WORKSPACE/$FRONTEND_DIR")
                     }
                 }
             }
