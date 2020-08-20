@@ -34,7 +34,10 @@ pipeline {
             steps {
 			    dir("${FRONTEND_DIR}") {
                     script {
-                        builder.buildApp(FRONTEND_IMAGE_NAME)
+                        sh"""
+                            pwd
+                        """
+                        builder.buildApp(FRONTEND_IMAGE_NAME, FRONTEND_DIR)
                     }
                 }
             }
