@@ -34,7 +34,7 @@ pipeline {
             steps {
 			    dir("${WORKSPACE}/${FRONTEND_DIR}") {
                     script {
-                        builder.buildApp(FRONTEND_IMAGE_NAME, "${WORKSPACE}/${FRONTEND_DIR}/**/*")
+                        builder.buildApp(FRONTEND_IMAGE_NAME, ".")
                     }
                 }
             }
