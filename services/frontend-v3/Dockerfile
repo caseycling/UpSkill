@@ -23,7 +23,7 @@ RUN yarn install --production --verbose
 COPY . .
 
 # Builds the app
-RUN yarn build
+RUN yarn build --verbose
 
 # Runs start script
 CMD yarn start:prod
