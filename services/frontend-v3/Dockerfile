@@ -5,18 +5,19 @@ ENV TZ=America/Toronto
 USER root
 
 # Set working directory
-RUN mkdir /upskill-frontend
+RUN mkdir -p /upskill-frontend/build
 WORKDIR /upskill-frontend
-
-# Copy app dependencies
-COPY package.json yarn.lock ./
-
-# Create build folder
-RUN mkdir ./build
 
 # Make group permissions equal to the owner user permissions
 RUN chgrp -R 0 /upskill-frontend && \ 
   chmod -R g=u /upskill-frontend
+
+# Copy app dependencies
+COPY package.json yarn.lock /upskill-frontend/
+
+RUN pwd
+
+RUN ls -la
 
 # Runs install script
 RUN yarn install --production
