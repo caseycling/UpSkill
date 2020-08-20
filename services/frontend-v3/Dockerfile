@@ -16,14 +16,14 @@ COPY package.json yarn.lock /upskill-frontend/
 RUN chgrp -R 0 /upskill-frontend && \ 
   chmod -R g=u /upskill-frontend
 
-RUN ls -la /upskill-frontend/src
-RUN ls -la /upskill-frontend/src/database
-
 # Runs install script
 RUN yarn install --production
 
 # Copy app
 COPY . .
+
+RUN ls -la /upskill-frontend/src
+RUN ls -la /upskill-frontend/src/database
 
 # Builds the app
 RUN yarn build
