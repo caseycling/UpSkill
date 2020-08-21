@@ -17,7 +17,7 @@ RUN chgrp -R 0 /upskill-frontend && \
   chmod -R g=u /upskill-frontend
 
 RUN mkdir -p /.cache/yarn
-RUN la -la /
+RUN ls -la /
 RUN chgrp -R 0 /.cache/yarn && \ 
   chmod -R g=u /.cache/yarn
 
