@@ -22,9 +22,6 @@ RUN yarn install --production
 # Copy app
 COPY . .
 
-RUN ls -la /upskill-frontend/src
-RUN ls -la /upskill-frontend/src/database
-
 # Builds the app
 RUN yarn build
 
