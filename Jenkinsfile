@@ -1,4 +1,4 @@
-@Library('ised-cicd-lib@italent') _
+@Library('ised-cicd-lib@test-cleanup') _
 
 pipeline {
     agent {
