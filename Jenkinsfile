@@ -34,6 +34,7 @@ pipeline {
             steps {
 			    dir("${WORKSPACE}/${FRONTEND_DIR}") {
                     script {
+                        stash name: 'testStash', includes: "${FRONTEND_DIR}"
                         builder.buildApp(FRONTEND_IMAGE_NAME, ".")
                     }
                 }
